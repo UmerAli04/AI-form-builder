@@ -42,7 +42,7 @@ type attributesType = {
     fontWeight: fontWeightType;
 };
 
-type ParagraphPropertiesSchema = z.infer<typeof paragraphValidateSchema>;
+type ParagraphPropertiesSchema = z.input<typeof paragraphValidateSchema>;
 const paragraphValidateSchema = z.object({
     text: z.string().trim().min(1).max(1000),
     fontSize: z.enum(["small", "medium", "large"]).default("small"),

@@ -38,7 +38,7 @@ type attributesType = {
     maxStars: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 };
 
-type PropertiesValidateSchemaType = z.infer<typeof propertiesValidateSchema>;
+type PropertiesValidateSchemaType = z.input<typeof propertiesValidateSchema>;
 
 const propertiesValidateSchema = z.object({
     label: z.string().trim().min(2).max(255),

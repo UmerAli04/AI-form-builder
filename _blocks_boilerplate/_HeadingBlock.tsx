@@ -49,7 +49,7 @@ type attributesType = {
     fontWeight: fontWeightType;
 };
 
-type propertiesValidateSchemaType = z.infer<typeof propertiesValidateSchema>;
+type propertiesValidateSchemaType = z.input<typeof propertiesValidateSchema>;
 
 const propertiesValidateSchema = z.object({
     label: z.string().trim().min(2).max(255),

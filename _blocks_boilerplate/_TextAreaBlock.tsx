@@ -37,7 +37,7 @@ type attributesType = {
     rows: number;
 };
 
-type PropertiesValidateSchemaType = z.infer<typeof propertiesValidateSchema>;
+type PropertiesValidateSchemaType = z.input<typeof propertiesValidateSchema>;
 
 const propertiesValidateSchema = z.object({
     placeHolder: z.string().trim().optional(),

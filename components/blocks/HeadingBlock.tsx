@@ -49,15 +49,13 @@ type attributesType = {
     fontWeight: fontWeightType;
 };
 
-type propertiesValidateSchemaType = z.infer<typeof propertiesValidateSchema>;
+type propertiesValidateSchemaType = z.input<typeof propertiesValidateSchema>;
 
 const propertiesValidateSchema = z.object({
     label: z.string().trim().min(2).max(255),
-    level: z.number().min(1).max(6).default(1), // Defaults to H1
-    fontSize: z
-        .enum(["small", "medium", "large", "x-large", "2x-large", "4x-large"])
-        .default("medium"),
-    fontWeight: z.enum(["normal", "bold", "bolder", "lighter"]).default("normal"),
+    level: z.number().min(1).max(6),
+    fontSize: z.enum(["small", "medium", "large", "x-large", "2x-large", "4x-large"]),
+    fontWeight: z.enum(["normal", "bold", "bolder", "lighter"]),
 });
 
 export const HeadingBlock: ObjectBlockType = {

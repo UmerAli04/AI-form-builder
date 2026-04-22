@@ -48,7 +48,7 @@ const paragraphValidateSchema = z.object({
     fontWeight: z.enum(["normal", "lighter"]).default("normal"),
 });
 
-type ParagraphPropertiesSchema = z.infer<typeof paragraphValidateSchema>;
+type ParagraphPropertiesSchema = z.input<typeof paragraphValidateSchema>;
 
 export const ParagraphBlock: ObjectBlockType = {
     blockType,
